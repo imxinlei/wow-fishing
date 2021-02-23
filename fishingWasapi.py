@@ -80,7 +80,9 @@ if __name__ == "__main__":
 
             getPeakVolume()
             while time.time() - startedAt <= 26:
-                if getPeakVolume() > 0.2:
+                v = getPeakVolume()
+                if v > 0.14:
+                    # print(v)
                     wow.rclick(point[0] / 100, point[1] / 100)
                     break
                 time.sleep(0.5)
