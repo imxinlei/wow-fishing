@@ -91,5 +91,5 @@ if __name__ == "__main__":
         print("Ctrl-c received! Sending kill to threads...")
 
     except Exception:
-        stopCapture()
+        stopAudioCapture()
         print("terminated")
