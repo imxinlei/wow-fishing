@@ -4,6 +4,7 @@ Fishing bot for world of warcraft, detecting cursor change to find hook, monitor
 # Prerequisities
 - OS: Windows Vista / 7 / 8 / 10
 - python3.x
+- C++ compiler / Visual Studio
 
 # Environment Setup
 ```sh

@@ -38,11 +38,8 @@ if __name__ == "__main__":
                 time.sleep(2)
                 continue
 
-            # destroy trash & open shells & start fish
-            wow.press(50)
+            # press 1 to start fishing
             time.sleep(1)
-            wow.press(51)
-            time.sleep(0.5)
             wow.press(49)
 
             # get default cursor
@@ -54,7 +51,7 @@ if __name__ == "__main__":
             found = False
             point = 0, 0
 
-            time.sleep(1)
+            time.sleep(3)
 
             # find the float by search for 6 circles
             #
@@ -79,7 +76,7 @@ if __name__ == "__main__":
                 continue
 
             getPeakVolume()
-            while time.time() - startedAt <= 26:
+            while time.time() - startedAt <= 24:
                 v = getPeakVolume()
                 if v > 0.14:
                     # print(v)
