@@ -30,7 +30,6 @@ if __name__ == "__main__":
             raise Exception("start audio capture failed", 1)
 
         while True:
-
             wow.testLogout()
 
             if GetWindowText(GetForegroundWindow()) != "魔兽世界":
@@ -39,8 +38,8 @@ if __name__ == "__main__":
                 continue
 
             # press 1 to start fishing
-            time.sleep(1)
-            wow.press(49)
+            time.sleep(0.5)
+            wow.press(ord('1'))
 
             # get default cursor
             wow.moveTo(0.05, 0.05)
@@ -76,10 +75,9 @@ if __name__ == "__main__":
                 continue
 
             getPeakVolume()
-            while time.time() - startedAt <= 24:
+            while time.time() - startedAt <= 26:
                 v = getPeakVolume()
                 if v > 0.14:
-                    # print(v)
                     wow.rclick(point[0] / 100, point[1] / 100)
                     break
                 time.sleep(0.5)

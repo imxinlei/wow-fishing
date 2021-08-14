@@ -36,8 +36,13 @@ class WowWindow:
         if battleHandler == 0:
             raise Exception("battle client is not start", 1)
 
+        win32gui.ShowWindow(battleHandler, 5)
+        win32gui.SetForegroundWindow(battleHandler)
+        time.sleep(1)
+
         print('launching from battle net...')
         win32gui.PostMessage(battleHandler, win32con.WM_KEYDOWN, 13, 0)
+        win32gui.PostMessage(battleHandler, win32con.WM_KEYUP, 13, 0)
 
         time.sleep(15)
 
@@ -47,6 +52,7 @@ class WowWindow:
         print('wow window starts success')
         print('choosing character...')
         win32gui.PostMessage(self.handler, win32con.WM_KEYDOWN, 13, 0)
+        win32gui.PostMessage(self.handler, win32con.WM_KEYUP, 13, 0)
 
         time.sleep(10)
         return self.handler
@@ -83,6 +89,6 @@ class WowWindow:
 
     def rclick(self, percX, percY):
         if (self.handler != 0):
-            param = win32api.MAKELONG(int(self.left + self.width * percX),  int(self.top + self.height * percY))
+            param = win32api.MAKELONG(int(self.width * percX - 4), int(self.height * percY - 30))
             win32gui.PostMessage(self.handler, win32con.WM_RBUTTONDOWN, 0, param)
             win32gui.PostMessage(self.handler, win32con.WM_RBUTTONUP, 0, param)
